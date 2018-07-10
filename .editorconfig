@@ -1,0 +1,9 @@
+root = true # Irá funcionar para todos os editores e arquivos.
+
+[*] # significa que vou olhar todos os arquivos
+indent_style = space # pode ser tabs também porém por padrão do Airbnb se usa space.
+indent_size = 2 # É definido pelo Airbnb também.
+end_of_line = lf # É para definir o fim de linha. lf é comum em OS linux e Unix mas serve para windows também.
+charset = utf-8
+trim_trailing_whitespace = true # Quero que apague todo espaço vazio que não seja útil.
+insert_final_newline = true # Colocar uma linha no final do arquivo.
