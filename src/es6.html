@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<style>
+    .green {
+      color: green;
+      font-size: 25px;
+    }
+</style>
+<body>
+
+
+  <!-- <button id="btn">Click Me!</button> -->
+  <!-- <button id="btn">Make my sandwich!</button> -->
+      <ul id="list">
+          <li>Sérgio</li>
+          <li>Pereira</li>
+          <li>Bonifácio</li>
+          <li>Júnior</li>
+      </ul>
+
+  <script>
+    // Escopo JS
+      // var animal = 'cat';
+      // console.log(animal);
+      // {
+      //   var animal = 'dog';
+      //   console.log(animal);
+      // }
+      // console.log(animal);
+
+        // const secretNumber = 28;
+        // secretNumber = 30;
+
+        // const will = {
+        //   name: 'Sérgio',
+        //   age: 29
+        // };
+
+        // console.log(will);
+
+        // will.age = 28;
+
+        // console.log(will);
+
+
+        // temporal dead zone
+        // console.log(cat);
+        // var cat = 'meow'; // undefined
+        // let cat = 'meow'; // referenceError: cat not is defined.
+        // const cat = 'meow'; // referenceError: cat not is defined.
+
+  </script>
+
+  <script>
+      // // Intro Arrow Function
+        // const ireland = ['Dublin', 'Galway', 'Cork'];
+
+        // const love = ireland.map(function(name) {
+        //   return `I love ${name}`;
+        // });
+
+        // const loveArrow = ireland.map((name) => {
+        //   return `I love ${name}`;
+        // });
+
+        // const loveArrowSingle = ireland.map(name => {
+        //   return `I love ${name}`;
+        // });
+
+        // const loveArrowOneLine = ireland.map(name => `I love ${name}`);
+
+        // const loveChain = ireland
+        //                     .filter(name => name === 'Dublin')
+        //                     .map(nome => `I love ${nome}`);
+
+        // console.log(loveChain);
+
+
+  </script>
+
+  <script>
+        /// Primeiro artigo
+        // const btn = document.getElementById('btn');
+        // btn.addEventListener('click', () => {
+        //   console.log(this);
+        // });
+
+        // const sandwich = {
+        //   bread: 'white',
+        //   cheese: 'cheddar',
+
+        //   prepare: function() {
+        //     return `I want a sandwich with ${this.bread} bread and ${this.cheese} cheese!`;
+        //   },
+
+          // ES5
+          // make: function() {
+          //     var self = this; // or can i use that too.
+          //     window.setTimeout(function() {
+          //       console.log(self.prepare());
+          //     }, 500);
+          // }
+
+          // ES6+
+          // make: function() {
+          //     window.setTimeout(() => {
+          //       console.log(this.prepare());
+          //     }, 500);
+          // }
+
+          // ES6+ (menos verbosa)
+        //   make: function() {
+        //       setTimeout(() => console.log(this.prepare()), 500);
+        //   }
+
+        // };
+
+        // const btn = document.getElementById('btn');
+        // btn.addEventListener('click', function() { sandwich.make() });
+  </script>
+
+  <script>
+      /// Template Strings (intro)
+//         const ireland = {
+//           live: 'Dublin',
+//           love: 'Galway'
+//         }
+
+//         const text = 'Eu moro em ' + ireland.live +  'e sou apaixonado por ' + ireland.love + '!';
+
+//         const newText = `Eu moro em ${ireland.live} e sou apaixonado por ${ireland.love} !`;
+
+//         const fruits = 'banana'
+//                        + '\n'
+//                        + 'apple'
+//                        + '\n'
+//                        + 'orange';
+// const newFruits =
+// `banana
+// apple
+// orange`;
+
+//         console.log(newFruits);
+  </script>
+
+  <script>
+      /// Usando Template Literals para HTML Fragments
+      // const article = {
+      //     title: 'Aprendendo Template String',
+      //     intro: 'Uma breve explicação de como se utilizar template strings do ES6 em seu código hoje!',
+      //     body: 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.',
+      //     tags: ['es6', 'js', 'template-literals', 'arrow function'],
+      //     author: 'Sérgio Bonifacio Jr.'
+      // };
+
+      // function renderAuthor(name) {
+      //     return (name) ? name : 'unknown';
+      // }
+
+      // const markup = `
+      //     <article>
+      //       <header>
+      //           <h1>${article.title}</h1>
+      //       </header>
+      //       <section>
+      //           <p>${article.intro}</p>
+      //       </section>
+      //       <section>${article.body}</section>
+      //       <footer>
+      //         <ul>
+      //           ${article.tags.map(tag => `<li>${tag}</li>`).join('')}
+      //         </ul>
+      //         <p>Author: ${renderAuthor(article.author)}</p>
+      //       </footer>
+      //     </article>
+      // `;
+
+      // document.body.innerHTML = markup;
+
+  </script>
+
+  <script>
+            /// Tagged Template (Muito Importante!!!)
+      // const city = 'Dublin';
+      // const something = 'Guinness';
+      // const otherThing = 'Leprechaums';
+
+      // function green(template, ...values) {
+      //    return template.reduce((accumulator, currentValue, i) => {
+      //      return `
+      //         ${accumulator}
+      //         <span class="green">${values[i - 1].toUpperCase()}</span>
+      //         ${currentValue}
+      //       `
+      //    });
+      // }
+
+      // const ireland = green`I live in ${city} the city of ${something} and ${otherThing}!`;
+
+      // document.body.innerHTML = ireland;
+  </script>
+
+  <script>
+      /// Shorthand Properties
+      // let firstName = 'Sérgio';
+      // let surname = 'Bonifacio';
+      // let age = 28;
+
+      // const person = {
+      //     firstName,
+      //     surname,
+      //     age,
+
+      //     hello() {
+      //       console.log('Hello')
+      //     }
+      // };
+
+      // console.log(person);
+
+      // person.hello();
+
+  </script>
+
+  <script>
+      /// Default Parameters
+      // function hello(name = 'Sérgio', surname = 'Bonifácio') {
+
+      //     console.log(`Hello ${name} ${surname}! how are you?`);
+      // }
+
+      // hello();
+
+      // hello('Paulo', 'César');
+
+      // hello('Andressa');
+  </script>
+
+  <script>
+      ///New Methodos of Strings
+      // let text = 'Lorem ipsum dolor sit amet';
+
+      // console.log(text.startsWith('rem', 2));
+      // console.log(text.endsWith('ame', 25));
+      // console.log('lol'.repeat(10));
+      // console.log(text.includes('lol'));
+  </script>
+
+  <script>
+      /// Método Array.from() -- Permite transformarmos uma string em um array.
+      // const text = 'Sérgio';
+      // const array = Array.from(text); // transformando string em array.
+      // const nodeList = document.querySelectorAll('#list li');
+      // const arrayList = Array.from(nodeList);
+
+      // const nomeCompleto = arrayList.map(name => name.textContent);
+
+      // console.log(nomeCompleto);
+
+  </script>
+
+  <script>
+      /// Permite criarmos um array a partir de certos elementos passados para ele.
+      // const array = Array.of(1, 4, 'Sergio', {name: 'Bonifacio' });
+      // console.log(array);
+  </script>
+
+  <script>
+      /// Array.find() and Array.findIndex()  -- O primeiro procura um dado e o segundo um índice dentro de um array.
+      // OBS: O find busca o primeiro valor que satisfazer a condição dentro do array. Diferente do filter, por ex, que responderia true ou false a uma
+      // condição para todos os elementos lá de dentro. E o find retorna o valor direto, não outro array como o filter.
+
+      // EX:
+      // const sampleArray = [4, -5, 0 -2];
+      // const underZero = sampleArray.find(x => x < 0);
+      // const underZeroIndex = sampleArray.findIndex(x => x < 0);
+      // console.log(underZero);
+      // console.log(underZeroIndex);
+
+      // const data = [
+      //     {
+      //         name: 'Sérgio',
+      //         age: 28,
+      //         city: 'Rio de Janeiro',
+      //         country: 'Brazil'
+      //     },
+      //     {
+      //         name: 'Andressa',
+      //         age: 30,
+      //         city: 'Dublin',
+      //         country: 'Irland'
+      //     }
+      // ];
+
+      // const sergio = data.find(person => person.name === 'Andressa');
+      // const sergioIndex = data.findIndex(person => person.name === 'Andressa');
+
+      // console.log(sergio);
+      // console.log(sergioIndex);
+
+  </script>
+
+  <script>
+    /// Array.fill -- Serve para preencher os arrays dentro do javascript.
+
+    // const arr = new Array(50);
+
+    // arr.fill('ser', 3, 6);
+    // console.log(arr);
+
+    // const newArray = [1, 2, 3, 4, 5, 6];
+    // newArray.fill('ser', 1, 3);
+    // console.log(newArray);
+
+  </script>
+
+  <script>
+      /// Destructuring Objects
+      // const person = {
+      //     name: 'Sérgio',
+      //     surname: 'Bonifácio',
+      //     age: 28,
+      //     blog: 'https://sergiobonifaciojr.com',
+      //     social: {
+      //       facebook: '/sergiobonif',
+      //       twitter: '@sergiobonif'
+      //     }
+      // };
+
+      // const nome = person.name;
+      // const surname = person.surname;
+      // const age = person.age;
+      // const blog = person.blog;
+      // const socialfb = person.social.facebook;
+      // const socialtw = person.social.twitter;
+
+      // const { name, surname, age, blog, social: { facebook, twitter } } = person;
+      // console.log(`My name is ${name} ${surname}, tenho ${age} anos e meu blog é ${blog}. Redes sociais: fb ${facebook}  tw ${twitter}`);
+
+      // const { facebook, twitter } = person.social;
+      // console.log(`Redes sociais: fb ${facebook}  tw ${twitter}`);
+
+      // const { facebook: fb, twitter: tw } = person.social;
+      // console.log(fb, tw);
+
+      // const { city = 'Rio de Janeiro' } = person;
+      // console.log(name);
+  </script>
+
+  <script>
+      /// Destructuring Array
+
+      // const arr = ['Sérgio', 'Bonifácio', 28, 'Rio de Janeiro'];
+      // const [name, surname, age, city] = arr;
+
+      // console.log(name);
+      // console.log(surname);
+      // console.log(age);
+      // console.log(city);
+
+  </script>
+
+  <script>
+      /// Destructuring Swap Variables
+      // let a = 20;
+      // let b = 30;
+      // // let temp;
+
+      // // temp = a;
+      // // a = b;
+      // // b = temp;
+      // [a, b] = [b, a];
+
+      // console.log(`a: ${a}`);
+      // console.log(`b: ${b}`);
+
+  </script>
+
+  <script>
+    /// Spread Operator -- Serve para pegar elementos que são iteráveis. Exemplo, array, string, arrar de objetos..  E desmembrar em
+                          // em pequenas partes.
+
+      // let front = ['react', 'vue', 'angular'];
+      // let back = ['python', 'ruby', 'nodejs'];
+
+      // // console.log([...'sergio']);
+      // // console.log(...'sergio');
+      // // console.log(...front);
+
+      // // let fullStack = [];
+      // // fullStack = fullStack.concat(front);
+      // // fullStack.push('RxJS');
+      // // fullStack = fullStack.concat(back);
+
+      // fullStack = [...front, 'React Native', ...back];
+
+      // console.log(fullStack);
+
+  </script>
+
+  <script>
+      /// Spread Operator dentro de functions!
+
+    //   function makeSandwich(bread, cheese, sauce) {
+    //       console.log(`Your sandwich with ${bread} bread, ${cheese} cheese and ${sauce} is done!`);
+    //   }
+
+    //   const ingredients = ['white', 'cheddar', 'barbecue'];
+
+    // //   makeSandwich('white', 'cheddar', 'barbecue');
+    //      makeSandwich(...ingredients);
+  </script>
+
+  <script>
+      /// Rest Parameters -- É útil quando não temos a certeza de quantos argumentos receberemos na função.
+      function multiply(mult, ...args) {
+          return args.map(arg => arg * mult);
+      }
+
+      console.log(multiply(5, 1, 2, 3, 4));
+
+  </script>
+
+
+
+</body>
+</html>
